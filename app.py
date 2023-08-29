@@ -14,7 +14,7 @@ def get_model():
 tokenizer,model = get_model()
 
 st.title('Bangla Clickbait Detection :sunglasses:')
-st.header('Check whether a Bangla News Headline is Clickbait or not', divider='rainbow')
+st.header('Check whether a Bangla News Headline is Clickbait or not')
 user_input = st.text_area('Enter Text to Analyze')
 button = st.button("Analyze")
 
