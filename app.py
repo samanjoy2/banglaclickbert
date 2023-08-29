@@ -22,7 +22,7 @@ if user_input and button :
     cls_explainer = SequenceClassificationExplainer(model, tokenizer)
     word_attributions = cls_explainer(user_input)
     st.write(cls_explainer.visualize())
-    st.divider()
+    # st.divider()
     if cls_explainer.predicted_class_index == 1:
         st.subheader('Label Predicted: _Clickbait_')
     else:
