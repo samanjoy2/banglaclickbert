@@ -36,16 +36,17 @@ with col1:
     selected_non_clickbait = st.selectbox("Select Non-Clickbait Example", non_clickbait_examples)
     copy_non_clickbait = st.button("Copy Non-Clickbait Example")
 
-user_input = col2.text_area('Text to analyze')
-button = col2.button("Analyze")
+if not copy_clickbait and not copy_non_clickbait:
+    user_input = col2.text_area('Text to analyze')
+    button = col2.button("Analyze")
 
 if copy_clickbait:
-    user_input = st.empty()
     user_input = col2.text_area('Text to analyze', selected_clickbait)
+    button = col2.button("Analyze")
 
 if copy_non_clickbait:
-    user_input = st.empty()
     user_input = col2.text_area('Text to analyze', selected_non_clickbait)
+    button = col2.button("Analyze")
 
 if user_input and button:
     cls_explainer = SequenceClassificationExplainer(model, tokenizer)
