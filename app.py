@@ -29,17 +29,27 @@ non_clickbait_examples = [
     "বায়ুদূষণে বাংলাদেশের মানুষের গড় আয়ু কমছে প্রায় ৭ বছর"
 ]
 
-# Create buttons in the sidebar for clickbait and non-clickbait examples
+# Define the JavaScript function to copy text to the text area
+copy_text_js = """
+function copyTextToTextArea(text) {
+    document.getElementById("user_input").value = text;
+}
+"""
+
+st.write(f"<script>{copy_text_js}</script>", unsafe_allow_html=True)
+
 with st.sidebar:
     st.subheader('Clickbait Examples:')
     for example in clickbait_examples:
-        st.button(example)
+        if st.button(example, onclick=f"copyTextToTextArea('{example}')"):
+            pass  # The button will be displayed with the defined onclick action
 
     st.subheader('Non-Clickbait Examples:')
     for example in non_clickbait_examples:
-        st.button(example)
+        if st.button(example, onclick=f"copyTextToTextArea('{example}')"):
+            pass  # The button will be displayed with the defined onclick action
 
-user_input = st.text_area('Enter Text to Analyze')
+user_input = st.text_area('Enter Text to Analyze', key="user_input")
 button = st.button("Analyze")
 
 if user_input and button:
