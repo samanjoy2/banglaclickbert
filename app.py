@@ -40,9 +40,11 @@ user_input = col2.text_area('Text to analyze')
 button = col2.button("Analyze")
 
 if copy_clickbait:
+    del user_input
     user_input = col2.text_area('Text to analyze', selected_clickbait)
 
 if copy_non_clickbait:
+    del user_input
     user_input = col2.text_area('Text to analyze', selected_non_clickbait)
 
 if user_input and button:
