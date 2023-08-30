@@ -51,15 +51,15 @@ if user_input and button:
     st.write(cls_explainer.visualize())
     # st.divider()
     if cls_explainer.predicted_class_index == 1:
-        st.subheader('Label Predicted: _Clickbait_')
+        st.subheader('Label Predicted: :orange[_Clickbait_]')
     else:
-        st.subheader('Label Predicted: _Not-Clickbait_')
+        st.subheader('Label Predicted: :orange[_Not-Clickbait_]')
 
 
 url1 = "https://github.com/samanjoy2/CSE431"
 url2 = ""
-st.write("GitHub [link](%s)" % url1)
-st.write("Paper [link](%s)" % url2)
+st.markdown("GitHub [link](%s)" % url1)
+st.markdown("Paper [link](%s)" % url2)
 
 
 hide_streamlit_style = """
