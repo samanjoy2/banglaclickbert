@@ -60,3 +60,12 @@ url1 = "https://github.com/samanjoy2/CSE431"
 url2 = ""
 st.write("GitHub [link](%s)" % url1)
 st.write("Paper [link](%s)" % url2)
+
+
+hide_streamlit_style = """
+            <style>
+            [data-testid="stToolbar"] {visibility: hidden !important;}
+            footer {visibility: hidden !important;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
