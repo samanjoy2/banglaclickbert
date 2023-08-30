@@ -36,7 +36,13 @@ with col1:
     selected_non_clickbait = st.selectbox("Select Non-Clickbait Example", non_clickbait_examples)
     copy_non_clickbait = st.button("Copy Non-Clickbait Example")
 
-user_input = col2.text_area('Enter Text to Analyze')
+user_input = col2.text_area('Text to analyze', '''
+    It was the best of times, it was the worst of times, it was
+    the age of wisdom, it was the age of foolishness, it was
+    the epoch of belief, it was the epoch of incredulity, it
+    was the season of Light, it was the season of Darkness, it
+    was the spring of hope, it was the winter of despair, (...)
+    ''')
 button = col2.button("Analyze")
 
 if copy_clickbait:
