@@ -14,41 +14,44 @@ def get_model():
 tokenizer, model = get_model()
 
 st.title('Bangla Clickbait Detection :sunglasses:')
+st.write('---')
 st.header('Check whether a Bangla News Headline is Clickbait or not')
 
-user_input = st.text_area('Enter Text to Analyze', key="user_input")
-button = st.button("Analyze")
-
-if user_input and button:
-    cls_explainer = SequenceClassificationExplainer(model, tokenizer)
-    word_attributions = cls_explainer(user_input)
-    st.write(cls_explainer.visualize())
-    st.subheader("Analysis Result:")
-    if cls_explainer.predicted_class_index == 1:
-        st.write('_Clickbait_')
-    else:
-        st.write('_Not-Clickbait_')
-
-st.markdown("---")
-
-st.subheader('Clickbait Examples:')
+# Define the sidebar buttons and their corresponding text
 clickbait_examples = [
     "অবশেষে মুখ খুললেন রাজ, যা বললেন পরীমনি ও সন্তান প্রসঙ্গে",
     "পান্তা ভাতের ইংরেজি কী জানেন? খুব সহজ! মাথায় আসছে না তো! জানুন",
     "এক টানেই আধ কোটির ইলিশ! সাগরে জাল ফেলতেই ভাগ্য বদল মৎস্যজীবীর! ইলিশে ইলিশে ছেয়ে গেল বাজার!"
 ]
 
-for example in clickbait_examples:
-    if st.button(example, key=f"clickbait_{example}"):
-        user_input = example
-
-st.subheader('Non-Clickbait Examples:')
 non_clickbait_examples = [
     "যুক্তরাজ্যে ফ্লাইট বিপর্যয়, ভোগান্তি থাকবে ‘কয়েকদিন’",
     "চট্টগ্রামে খাল–নালায় মানুষ মরছে, তবু নিরাপত্তাবেষ্টনী উঠছে না",
     "বায়ুদূষণে বাংলাদেশের মানুষের গড় আয়ু কমছে প্রায় ৭ বছর"
 ]
 
-for example in non_clickbait_examples:
-    if st.button(example, key=f"non_clickbait_{example}"):
-        user_input = example
+# Create buttons in the sidebar for clickbait and non-clickbait examples
+with st.sidebar:
+    st.subheader('Clickbait Examples:')
+    for example in clickbait_examples:
+        if st.button(example):
+            st.session_state.user_input = example
+    st.write('---')
+    st.subheader('Non-Clickbait Examples:')
+    for example in non_clickbait_examples:
+        if st.button(example):
+            st.session_state.user_input = example
+
+user_input = st.text_area('Enter Text to Analyze', key="user_input")
+button = st.button("Analyze")
+st.write('---')
+
+if user_input and button:
+    cls_explainer = SequenceClassificationExplainer(model, tokenizer)
+    word_attributions = cls_explainer(user_input)
+    st.write(cls_explainer.visualize())
+    # st.divider()
+    if cls_explainer.predicted_class_index == 1:
+        st.subheader('Label Predicted: _Clickbait_')
+    else:
+        st.subheader('Label Predicted: _Not-Clickbait_')
