@@ -36,9 +36,9 @@ with col1:
     selected_non_clickbait = st.selectbox("Select Non-Clickbait Example", non_clickbait_examples)
     copy_non_clickbait = st.button("Copy Non-Clickbait Example")
 
-if not copy_clickbait and not copy_non_clickbait:
-    user_input = col2.text_area('Text to analyze')
-    button = col2.button("Analyze")
+with col2:
+    user_input = st.text_area('Text to analyze', key="input_area")
+    button = st.button("Analyze")
 
 if copy_clickbait:
     user_input = col2.text_area('Text to analyze', selected_clickbait)
