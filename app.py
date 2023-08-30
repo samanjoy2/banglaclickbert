@@ -26,7 +26,7 @@ with col1:
     selected_clickbait = st.selectbox("Select Clickbait Example", clickbait_examples)
     copy_clickbait = st.button("Copy Clickbait Example")
 
-with col2:
+with col1:
     st.subheader('Some Examples of Non-Clickbait Headlines:')
     non_clickbait_examples = [
         "যুক্তরাজ্যে ফ্লাইট বিপর্যয়, ভোগান্তি থাকবে ‘কয়েকদিন’",
@@ -36,14 +36,14 @@ with col2:
     selected_non_clickbait = st.selectbox("Select Non-Clickbait Example", non_clickbait_examples)
     copy_non_clickbait = st.button("Copy Non-Clickbait Example")
 
-if copy_clickbait:
-    col2.text_area("Enter Text to Analyze", selected_clickbait)
-
-if copy_non_clickbait:
-    col2.text_area("Enter Text to Analyze", selected_non_clickbait)
-
 user_input = col2.text_area('Enter Text to Analyze')
 button = col2.button("Analyze")
+
+if copy_clickbait:
+    user_input = selected_clickbait
+
+if copy_non_clickbait:
+    user_input = selected_non_clickbait
 
 if user_input and button:
     cls_explainer = SequenceClassificationExplainer(model, tokenizer)
