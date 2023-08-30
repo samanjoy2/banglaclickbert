@@ -24,10 +24,9 @@ with col1:
         "এক টানেই আধ কোটির ইলিশ! সাগরে জাল ফেলতেই ভাগ্য বদল মৎস্যজীবীর! ইলিশে ইলিশে ছেয়ে গেল বাজার!"
     ]
     selected_clickbait = st.selectbox("Select Clickbait Example", clickbait_examples)
-    if st.button("Copy Clickbait Example"):
-        col2.text_area("Enter Text to Analyze", selected_clickbait)
+    copy_clickbait = st.button("Copy Clickbait Example")
 
-with col1:
+with col2:
     st.subheader('Some Examples of Non-Clickbait Headlines:')
     non_clickbait_examples = [
         "যুক্তরাজ্যে ফ্লাইট বিপর্যয়, ভোগান্তি থাকবে ‘কয়েকদিন’",
@@ -35,8 +34,13 @@ with col1:
         "বায়ুদূষণে বাংলাদেশের মানুষের গড় আয়ু কমছে প্রায় ৭ বছর"
     ]
     selected_non_clickbait = st.selectbox("Select Non-Clickbait Example", non_clickbait_examples)
-    if st.button("Copy Non-Clickbait Example"):
-        col2.text_area("Enter Text to Analyze", selected_non_clickbait)
+    copy_non_clickbait = st.button("Copy Non-Clickbait Example")
+
+if copy_clickbait:
+    col2.text_area("Enter Text to Analyze", selected_clickbait)
+
+if copy_non_clickbait:
+    col2.text_area("Enter Text to Analyze", selected_non_clickbait)
 
 user_input = col2.text_area('Enter Text to Analyze')
 button = col2.button("Analyze")
