@@ -56,7 +56,7 @@ if user_input and button:
         st.subheader('Label Predicted: _Not-Clickbait_')
 
 
-url = "https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py"
-st.write("check out this [link](%s)" % url)
-
-st.markdown("check out this [link](%s)" % url)
+url1 = "https://github.com/samanjoy2/CSE431"
+url2 = ""
+st.write("GitHub [link](%s)" % url1)
+st.write("Paper [link](%s)" % url2)
