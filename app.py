@@ -51,9 +51,9 @@ if user_input and button:
     st.write(cls_explainer.visualize())
     # st.divider()
     if cls_explainer.predicted_class_index == 1:
-        st.subheader('Label Predicted: :orange[_Clickbait_]')
+        st.subheader('Label Predicted: :orange[Clickbait]')
     else:
-        st.subheader('Label Predicted: :orange[_Not-Clickbait_]')
+        st.subheader('Label Predicted: :orange[Not-Clickbait]')
 
 
 url1 = "https://github.com/samanjoy2/CSE431"
