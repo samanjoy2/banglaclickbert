@@ -52,6 +52,8 @@ if user_input and button:
     # st.divider()
     if cls_explainer.predicted_class_index == 1:
         st.subheader('Label Predicted: :blue[Clickbait]')
+        st.subheader('_Streamlit_ is :blue[cool] :sunglasses:')
+
     else:
         st.subheader('Label Predicted: :blue[Not-Clickbait]')
 
