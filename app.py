@@ -14,7 +14,6 @@ def get_model():
 tokenizer, model = get_model()
 
 st.title('Bangla Clickbait Detection :sunglasses:')
-st.write('---')
 st.header('Check whether a Bangla News Headline is Clickbait or not')
 
 # Define the sidebar buttons and their corresponding text
