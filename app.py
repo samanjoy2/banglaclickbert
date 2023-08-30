@@ -29,27 +29,26 @@ if user_input and button:
     else:
         st.write('_Not-Clickbait_')
 
-st.write("---")
+st.markdown("---")
 
-# Define the sidebar buttons and their corresponding text
+st.subheader('Clickbait Examples:')
 clickbait_examples = [
     "অবশেষে মুখ খুললেন রাজ, যা বললেন পরীমনি ও সন্তান প্রসঙ্গে",
     "পান্তা ভাতের ইংরেজি কী জানেন? খুব সহজ! মাথায় আসছে না তো! জানুন",
     "এক টানেই আধ কোটির ইলিশ! সাগরে জাল ফেলতেই ভাগ্য বদল মৎস্যজীবীর! ইলিশে ইলিশে ছেয়ে গেল বাজার!"
 ]
 
+for example in clickbait_examples:
+    if st.button(example, key=f"clickbait_{example}"):
+        user_input = example
+
+st.subheader('Non-Clickbait Examples:')
 non_clickbait_examples = [
     "যুক্তরাজ্যে ফ্লাইট বিপর্যয়, ভোগান্তি থাকবে ‘কয়েকদিন’",
     "চট্টগ্রামে খাল–নালায় মানুষ মরছে, তবু নিরাপত্তাবেষ্টনী উঠছে না",
     "বায়ুদূষণে বাংলাদেশের মানুষের গড় আয়ু কমছে প্রায় ৭ বছর"
 ]
 
-st.sidebar.subheader('Clickbait Examples:')
-for example in clickbait_examples:
-    if st.sidebar.button(example, key=f"clickbait_{example}"):
-        user_input = example
-
-st.sidebar.subheader('Non-Clickbait Examples:')
 for example in non_clickbait_examples:
-    if st.sidebar.button(example, key=f"non_clickbait_{example}"):
+    if st.button(example, key=f"non_clickbait_{example}"):
         user_input = example
