@@ -43,19 +43,16 @@ with st.sidebar:
 
 user_input = st.text_area('Enter Text to Analyze', key="user_input")
 button = st.button("Analyze")
-st.write('---')
+# st.write('---')
 
 if user_input and button:
     cls_explainer = SequenceClassificationExplainer(model, tokenizer)
     word_attributions = cls_explainer(user_input)
     st.write(cls_explainer.visualize())
-    # st.divider()
     if cls_explainer.predicted_class_index == 1:
-        st.subheader('Label Predicted: :blue[Clickbait]')
-        st.subheader('_Streamlit_ is :blue[cool] :sunglasses:')
-
+        st.subheader('Label Predicted: _Clickbait_')
     else:
-        st.subheader('Label Predicted: :blue[Not-Clickbait]')
+        st.subheader('Label Predicted: _Not-Clickbait_')
 
 
 url1 = "https://github.com/samanjoy2/CSE431"
