@@ -50,9 +50,9 @@ if user_input and button:
     word_attributions = cls_explainer(user_input)
     st.write(cls_explainer.visualize())
     if cls_explainer.predicted_class_index == 1:
-        st.subheader('Label Predicted: _Clickbait_')
+        st.subheader('Label Predicted: _Clickbait_ :fishing_pole_and_fish:')
     else:
-        st.subheader('Label Predicted: _Not-Clickbait_')
+        st.subheader('Label Predicted: _Not-Clickbait_ :ok_hand:')
 
 
 url1 = "https://github.com/samanjoy2/CSE431"
