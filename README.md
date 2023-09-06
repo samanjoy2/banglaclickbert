@@ -7,7 +7,7 @@ Bangla Clickbait Detection app made with Streamlit using Domain Adaptive BanglaB
 - See how the model predicted the label with Explainable AI
 
 ## Demo
-  [![Alt text]([https://github.com/samanjoy2/banglaclickbert/blob/main/demo.gif?raw=true](https://github.com/samanjoy2/banglaclickbert/blob/main/demo.gif?raw=true))
+ [![Alt text](https://raw.githubusercontent.com/samanjoy2/banglaclickbert/main/demo.gif)
 
 [App Link](https://banglaclickbert.streamlit.app/)
 [Paper Link](https://)
