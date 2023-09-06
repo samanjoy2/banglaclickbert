@@ -10,7 +10,4 @@ Bangla Clickbait Detection app made with Streamlit using Domain Adaptive BanglaB
 
 [Paper Link](https://)
 ## Demo
- [![Alt text](https://raw.githubusercontent.com/samanjoy2/banglaclickbert/main/demo.gif)
-
-
-[Paper Link](https://)
+ ![Alt text](https://raw.githubusercontent.com/samanjoy2/banglaclickbert/main/demo.gif)
