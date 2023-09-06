@@ -55,7 +55,7 @@ if user_input and button:
         st.subheader('Label Predicted: _Not-Clickbait_ :ok_hand:')
 
 
-url1 = "https://github.com/samanjoy2/CSE431"
+url1 = "https://github.com/samanjoy2/banglaclickbert"
 url2 = ""
 st.markdown("GitHub [link](%s)" % url1)
 st.markdown("Paper [link](%s)" % url2)
