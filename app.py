@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 from transformers_interpret import SequenceClassificationExplainer
 
-@st.cache(allow_output_mutation=True)
+# @st.cache(allow_output_mutation=True)
 def get_model():
     model_name = "samanjoy2/banglaclickbert_finetuned_sequence_classification_clickbait"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
